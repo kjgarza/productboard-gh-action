@@ -1,27 +1,10 @@
 name: "CI Setup for IFTTT Webhook"
 
 on:
-  issues:
-    types: [opened]
-
-#on:
-#  pull_request:
-#  push:
-#    branches:
-#      - master
-#      - 'releases/*'
+  workflow_dispatch:
 
 jobs:
-  # unit tests
-#  units:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v1
-#    - run: npm ci
-#    - run: npm test
-
-  # test action works running from the graph  
-  test:
+  productboard:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -30,3 +13,12 @@ jobs:
         milliseconds: 1000
         event: "github_issue"
         key: "EoNxVmkmo3cxJQct-8MvT"
+    - uses: dessant/support-requests@v2
+      with:
+        github-token: ${{ github.token }}
+        support-label: 'user story'
+        issue-comment: >
+          :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there.
+        close-issue: true
+        lock-issue: false
+        issue-lock-reason: 'new-workflow'
