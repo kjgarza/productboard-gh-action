@@ -14,7 +14,7 @@ inputs:
     description: 'Your secret ProductBaord webhooks key'
     required: true
     default: 'EoNxVmkmo3cxJQct-8MvT'
-  productboard-token:
+  productboardtoken:
     description: 'Your secret ProductBaord Token'
     required: true
     default: ''
