@@ -2,8 +2,6 @@ name: "CI Setup for IFTTT Webhook"
 
 on:
   workflow_dispatch:
-  issues:
-    types: [labeled, unlabeled]
 
 jobs:
   productboard:
@@ -18,7 +16,7 @@ jobs:
     - uses: dessant/support-requests@v2
       with:
         github-token: ${{ secrets.ISSUES_TOKEN }}
-        support-label: 'user story'
+        support-label: 'support'
         issue-comment: >
           :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there.
         close-issue: true
