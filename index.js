@@ -19,7 +19,6 @@ async function run() {
 //       issueTitle: `#${issue.number} ${issue.title}`,
 //       issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
       title: `#${issue.number} ${issue.title}`,
-      // content: `${issue.body}\n\n\n${issue.html_url}\n\nComments:${issue.comments}`,
       content: `${issue.body} Comments:${issue.comments}`,
       customer_email: `${issue.user.login}@github.com`,
       display_url: `${issue.html_url}`,
@@ -41,7 +40,7 @@ async function run() {
     //   value3: PayloadSchema['issueDescription'],
     // };
 
-    console.log(axios.defaults.headers.common);
+    // console.log(axios.defaults.headers.common);
 
     const {status, statusText, data} = await axios.post(url, PayloadSchema, {
       headers: {
