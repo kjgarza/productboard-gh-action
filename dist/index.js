@@ -906,12 +906,14 @@ async function run() {
 
     console.log('issue : ', issue.title);
 
+    const content = issue.body + ' Issue: ' + issue.html_url + ' Comments: ' + issue.comments;
+
     const PayloadSchema = {
 //       issueCreatedBy: issue.user.login,
 //       issueTitle: `#${issue.number} ${issue.title}`,
 //       issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
       title: `#${issue.number} ${issue.title}`,
-      content: `${issue.body}\n\n\n${issue.html_url}\n\nComments:${issue.comments}`,
+      content: `${content}`,
       // content: `${issue.body} Comments:${issue.comments}`,
       customer_email: `${issue.user.login}@github.com`,
       display_url: `${issue.html_url}`,
