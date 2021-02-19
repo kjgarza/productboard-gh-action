@@ -937,11 +937,9 @@ async function run() {
 
     console.log(axios.defaults.headers.common);
 
-    const {status, statusText, data} = await axios.post(url, PayloadSchema, {
-      headers: {
-          'Content-Type': 'application/json',
-      }
-    });
+    const {status, statusText, data} = await axios.post(url, PayloadSchema);
+    console.log(axios.defaults.headers);
+
     console.log('response : ', statusText, status , data);
 
     return { statusText, status, data };
