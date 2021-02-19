@@ -15,7 +15,7 @@ jobs:
 #         key: "EoNxVmkmo3cxJQct-8MvT"
     - uses: dessant/support-requests@v2
       with:
-        github-token: ${{ github.token }}
+        github-token: ${{ secrets.ISSUES_TOKEN }}
         support-label: 'user story'
         issue-comment: >
           :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there.
