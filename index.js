@@ -20,6 +20,7 @@ async function run() {
 //       issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
       title: `#${issue.number} ${issue.title}`,
       content: `${issue.body}\n\n\n${issue.html_url}\n\nComments:${issue.comments}`,
+      // content: `${issue.body} Comments:${issue.comments}`,
       customer_email: `${issue.user.login}@github.com`,
       display_url: `${issue.html_url}`,
       source: {
@@ -40,7 +41,13 @@ async function run() {
     //   value3: PayloadSchema['issueDescription'],
     // };
 
-    const {status, statusText, data} = await axios.post(url, PayloadSchema);
+    console.log(axios.defaults.headers.common);
+
+    const {status, statusText, data} = await axios.post(url, PayloadSchema, {
+      headers: {
+          'Content-Type': 'application/json',
+      }
+    });
     console.log('response : ', statusText, status , data);
 
     return { statusText, status, data };
