@@ -1,6 +1,6 @@
-name: 'GitHub Action for Trello'
+name: 'GitHub Action for ProductBoard'
 author: 'kjgarza'
-description: 'Automatically pull Github issues into Trello using ProductBaord webhooks event'
+description: 'Automatically pull Github issues into ProductBoard using ProductBaord webhooks event'
 inputs:
   milliseconds:  # id of input
     description: 'number of milliseconds to wait'
