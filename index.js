@@ -19,8 +19,8 @@ async function run() {
 //       issueTitle: `#${issue.number} ${issue.title}`,
 //       issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
       title: `#${issue.number} ${issue.title}`,
-      content: `${issue.body}\n\n\n${issue.html_url}\n\nComments:${issue.comments}`,
-      // content: `${issue.body} Comments:${issue.comments}`,
+      // content: `${issue.body}\n\n\n${issue.html_url}\n\nComments:${issue.comments}`,
+      content: `${issue.body} Comments:${issue.comments}`,
       customer_email: `${issue.user.login}@github.com`,
       display_url: `${issue.html_url}`,
       source: {
