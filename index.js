@@ -11,12 +11,25 @@ async function run() {
     const octokit = github.context;
     const {issue} = octokit.payload;
 
-    console.log('issue : ', issue.html_url);
+    console.log('issue : ', issue);
 
     const PayloadSchema = {
-      issueCreatedBy: issue.user.login,
-      issueTitle: `#${issue.number} ${issue.title}`,
-      issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
+//       issueCreatedBy: issue.user.login,
+//       issueTitle: `#${issue.number} ${issue.title}`,
+//       issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
+      title: `#${issue.number} ${issue.title}`,
+      content: `${issue.body}\n\n\n${issue.html_url}\n`,
+      customer_email: issue.user.login,
+      display_url: "https://www.example.com/deskdesk/notes/123",
+      source: {
+        "origin": "deskdesk",
+        "record_id": "123"
+      },
+      tags: [
+        "3.0",
+        "important",
+        "experimental"
+      ]
     };
 
     const iftttPayload = {
