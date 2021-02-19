@@ -12,9 +12,9 @@ async function run() {
     const {issue} = octokit.payload;
     axios.defaults.headers.common = {'Authorization': `bearer ${productboardtoken}`}
 
-    console.log('issue : ', issue.title);
+    console.log('issue : ', issue);
 
-    const content = issue.body + ' Issue: ' + issue.html_url + ' Comments: ' + issue.comments;
+    const content = ' Issue: ' + issue.html_url + ' Comments: ' + issue.comments;
 
     const PayloadSchema = {
 //       issueCreatedBy: issue.user.login,
