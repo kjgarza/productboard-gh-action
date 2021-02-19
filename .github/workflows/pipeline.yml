@@ -21,4 +21,4 @@ jobs:
           :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there.
         close-issue: true
         lock-issue: false
-        issue-lock-reason: 'new-workflow'
+        issue-lock-reason: 'resolved'
