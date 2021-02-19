@@ -27,7 +27,7 @@ async function run() {
       display_url: `${issue.html_url}`,
       source: {
         "origin": `${issue.user.organizations_url}`,
-        "record_id": "12dshj34786fd3"
+        "record_id": `${issue.html_url}-${issue.number}`
       },
       tags: [
         "user story"
