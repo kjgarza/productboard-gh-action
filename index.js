@@ -10,11 +10,8 @@ async function run() {
     const url = `https://api.productboard.com/notes`;
     const octokit = github.context;
     const {issue} = octokit.payload;
-    axios.defaults.headers.common = {'Authorization': `bearer "${productboardtoken}"`}
+    axios.defaults.headers.common = {'Authorization': `bearer ${productboardtoken}`}
 
-
-    console.log('issue : ', issue);
-    console.log('issue : ', issue.issue);
     console.log('issue : ', issue.title);
 
     const PayloadSchema = {
@@ -22,8 +19,8 @@ async function run() {
 //       issueTitle: `#${issue.number} ${issue.title}`,
 //       issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
       title: `#${issue.number} ${issue.title}`,
-      content: `${issue.body}\n\n\n${issue.html_url}\n\n Comments: ${issue.comments}`,
-      customer_email: issue.user.login,
+      content: `${issue.body}\n\n\n${issue.html_url}\n\nComments:${issue.comments}`,
+      customer_email: `${issue.user.login}@github.com`,
       display_url: `${issue.html_url}`,
       source: {
         "origin": `${issue.user.organizations_url}`,
