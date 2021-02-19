@@ -1,25 +1,25 @@
-name: "ProductBoard Action"
+# name: "ProductBoard Action"
 
-on:
-  issues:
-    types: [labeled, unlabeled, reopened]
-  workflow_dispatch:
+# on:
+#   issues:
+#     types: [labeled, unlabeled, reopened]
+#   workflow_dispatch:
 
-jobs:
-  productboard:
-    if: github.event.label.name == 'to_productboard'
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: ./
-      with:
-        milliseconds: 1000
-        event: "github_issue"
-        productboardtoken: ${{ secrets.PRODUCTBOARD_TOKEN }}
-    - uses: dessant/support-requests@v2
-      with:
-        github-token: ${{ secrets.ISSUES_TOKEN }}
-        support-label: 'to_productboard'
-        issue-comment: >
-          :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there https://app.productboard.com/ .
-        close-issue: true
+# jobs:
+#   productboard:
+#     if: github.event.label.name == 'to_productboard'
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v1
+#     - uses: ./
+#       with:
+#         milliseconds: 1000
+#         event: "github_issue"
+#         productboardtoken: ${{ secrets.PRODUCTBOARD_TOKEN }}
+#     - uses: dessant/support-requests@v2
+#       with:
+#         github-token: ${{ secrets.ISSUES_TOKEN }}
+#         support-label: 'to_productboard'
+#         issue-comment: >
+#           :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there https://app.productboard.com/ .
+#         close-issue: true
