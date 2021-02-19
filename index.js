@@ -10,7 +10,7 @@ async function run() {
     const url = `https://api.productboard.com/notes`;
     const octokit = github.context;
     const {issue} = octokit.payload;
-    axios.defaults.headers.common = {'Authorization': `Bearer ${secrets.PRODUCTBOARD_TOKEN}`}
+    axios.defaults.headers.common = {'Authorization': `Bearer ${productboardtoken}`}
 
 
     console.log('issue : ', issue.title);

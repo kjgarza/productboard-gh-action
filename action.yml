@@ -1,6 +1,6 @@
 name: 'GitHub Action for Trello'
 author: 'kjgarza'
-description: 'Automatically pull Github issues into Trello using IFTTT webhooks event'
+description: 'Automatically pull Github issues into Trello using ProductBaord webhooks event'
 inputs:
   milliseconds:  # id of input
     description: 'number of milliseconds to wait'
@@ -11,9 +11,13 @@ inputs:
     required: true
     default: 'github_issue'
   key:
-    description: 'Your secret IFTTT webhooks key'
+    description: 'Your secret ProductBaord webhooks key'
     required: true
     default: 'EoNxVmkmo3cxJQct-8MvT'
+  productboard-token:
+    description: 'Your secret ProductBaord Token'
+    required: true
+    default: ''
 runs:
   using: 'node12'
   main: 'dist/index.js'

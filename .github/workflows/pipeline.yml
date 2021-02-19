@@ -14,6 +14,7 @@ jobs:
         milliseconds: 1000
         event: "github_issue"
         key: "EoNxVmkmo3cxJQct-8MvT"
+        productboard-token: ${{ secrets.PRODUCTBOARD_TOKEN }}
     - uses: dessant/support-requests@v2
       with:
         github-token: ${{ secrets.ISSUES_TOKEN }}
