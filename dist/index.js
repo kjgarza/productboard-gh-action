@@ -898,7 +898,7 @@ async function run() {
   console.log('----------------------------------------------------------');
   try {
     // const event = core.getInput('event', { required: true });
-    // const key = core.getInput('key', { required: true });
+    const productboardtoken = core.getInput('productboardtoken', { required: true });
     const url = `https://api.productboard.com/notes`;
     const octokit = github.context;
     const {issue} = octokit.payload;
