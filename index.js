@@ -5,7 +5,6 @@ const axios = require('axios');
 async function run() {
   console.log('----------------------------------------------------------');
   try {
-    // const event = core.getInput('event', { required: true });
     const productboardtoken = core.getInput('productboardtoken', { required: true });
     const url = `https://api.productboard.com/notes`;
     const octokit = github.context;
@@ -14,15 +13,11 @@ async function run() {
 
     console.log('issue : ', issue);
 
-    const content = ' Issue: ' + issue.html_url + ' Comments: ' + issue.comments;
+    const content = issue.body +' Issue: ' + issue.html_url + ' Comments: ' + issue.comments;
 
     const PayloadSchema = {
-//       issueCreatedBy: issue.user.login,
-//       issueTitle: `#${issue.number} ${issue.title}`,
-//       issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
       title: `#${issue.number} ${issue.title}`,
       content: `${content}`,
-      // content: `${issue.body} Comments:${issue.comments}`,
       customer_email: `${issue.user.login}@github.com`,
       display_url: `${issue.html_url}`,
       source: {
@@ -34,19 +29,7 @@ async function run() {
       ]
     };
 
-    console.log('payload : ', PayloadSchema);
-
-
-    // const iftttPayload = {
-    //   value1: PayloadSchema['issueCreatedBy'],
-    //   value2: PayloadSchema['issueTitle'],
-    //   value3: PayloadSchema['issueDescription'],
-    // };
-
-    console.log(axios.defaults.headers.common);
-
     const {status, statusText, data} = await axios.post(url, PayloadSchema);
-    console.log(axios.defaults.headers);
 
     console.log('response : ', statusText, status , data);
 

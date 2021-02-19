@@ -1,4 +1,4 @@
-name: "CI Setup for IFTTT Webhook"
+name: "ProductBoard Action"
 
 on:
   issues:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   productboard:
+    if: github.event.label.name == 'to_productboard'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -14,12 +15,11 @@ jobs:
       with:
         milliseconds: 1000
         event: "github_issue"
-        key: "EoNxVmkmo3cxJQct-8MvT"
         productboardtoken: ${{ secrets.PRODUCTBOARD_TOKEN }}
     - uses: dessant/support-requests@v2
       with:
         github-token: ${{ secrets.ISSUES_TOKEN }}
-        support-label: 'support'
+        support-label: 'user story'
         issue-comment: >
-          :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there.
+          :wave: @{issue-author}, we are tracking user stories in productboard. We have moved this issue there https://app.productboard.com/ .
         close-issue: true
