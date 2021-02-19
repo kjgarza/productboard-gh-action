@@ -13,6 +13,8 @@ async function run() {
     axios.defaults.headers.common = {'Authorization': `Bearer ${productboardtoken}`}
 
 
+    console.log('issue : ', issue);
+    console.log('issue : ', issue.issue);
     console.log('issue : ', issue.title);
 
     const PayloadSchema = {
