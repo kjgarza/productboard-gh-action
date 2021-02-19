@@ -1,7 +1,7 @@
 {
   "name": "productboard-gh-action",
   "version": "1.0.1",
-  "description": "GitHub action that triggers an IFTTT webhooks event",
+  "description": "GitHub action that triggers a ProductBoard webhooks event",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
@@ -10,19 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/kjgarza/productboard-gh-action.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
-    "JavaScript"
+    "JavaScript",
+    "Productboard"
   ],
-  "author": "kjgarza",
+  "author": "Kristian Garza <kj.garza@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/kjgarza/productboard-gh-action/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/kjgarza/productboard-gh-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
