@@ -1,7 +1,8 @@
 name: "CI Setup for IFTTT Webhook"
 
 on:
-  workflow_dispatch:
+  issues:
+    types: [labeled, unlabeled, reopened]
 
 jobs:
   productboard:
