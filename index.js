@@ -32,6 +32,9 @@ async function run() {
       ]
     };
 
+    console.log('payload : ', PayloadSchema);
+
+
     // const iftttPayload = {
     //   value1: PayloadSchema['issueCreatedBy'],
     //   value2: PayloadSchema['issueTitle'],
