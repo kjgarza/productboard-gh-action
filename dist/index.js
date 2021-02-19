@@ -903,7 +903,7 @@ async function run() {
     const octokit = github.context;
     const {issue} = octokit.payload;
 
-    console.log('issue : ffff ', issue.issue);
+    console.log('issue : ffff ', issue);
 
     const PayloadSchema = {
 //       issueCreatedBy: issue.user.login,
