@@ -1,6 +1,6 @@
 {
   "name": "productboard-gh-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub action that triggers an IFTTT webhooks event",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "Actions",
     "JavaScript"
   ],
-  "author": "awais786327",
+  "author": "kjgarza",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/actions/javascript-action/issues"

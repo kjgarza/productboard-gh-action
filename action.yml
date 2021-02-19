@@ -1,5 +1,5 @@
 name: 'GitHub Action for Trello'
-author: 'Muhammad Awais'
+author: 'kjgarza'
 description: 'Automatically pull Github issues into Trello using IFTTT webhooks event'
 inputs:
   milliseconds:  # id of input
@@ -16,7 +16,7 @@ inputs:
     default: 'EoNxVmkmo3cxJQct-8MvT'
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'index.js'
 branding:
   color: 'gray-dark'
   icon: 'list'
